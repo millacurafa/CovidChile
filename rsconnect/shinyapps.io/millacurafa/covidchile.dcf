@@ -1,0 +1,10 @@
+name: covidchile
+title:
+username:
+account: millacurafa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2997599
+bundleId: 3731670
+url: https://millacurafa.shinyapps.io/covidchile/
+when: 1602535238.89958
