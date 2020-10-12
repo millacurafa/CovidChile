@@ -97,6 +97,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Thanks to Felipe Millacura for creating this project
+* Epidemiological data obtained from the Chilean Health Ministry (MINSAL) and other official sources, documented and open for community analysis. Made available by the Chilean Science Ministry in the following [github repo](https://github.com/MinCiencia/Datos-COVID19/)
 
 
 
