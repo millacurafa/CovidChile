@@ -23,7 +23,7 @@ ui <- fluidPage(
            h2(paste("Analisis Covid19", print("🇨🇱")))
     ), #closes column
     
-    column(3, offset = 1,
+    column(4, offset = 1,
            selectInput("select", label = "Datos a analizar", 
                        choices = list("Casos totales" = 1, 
                                       "Casos activos" = 2, 
@@ -34,7 +34,7 @@ ui <- fluidPage(
                        selected = 1),
     ),#closes column
     
-    column(2, offset = 2,
+    column(2, offset = 1,
            dateInput("date", 
                      label = "Fecha",
                      value = "2020-10-05")
@@ -49,6 +49,7 @@ ui <- fluidPage(
       # type= "",
       # ---- First tab to be created ----
       tabPanel("Nacional",
+               br(),
                fluidRow(
                  column(3,
                         # Copy the line below to make a date range selector
@@ -56,25 +57,33 @@ ui <- fluidPage(
                  ), #closes column
                  # Show a plot of the generated distribution
                  column(9,
-                        "text"
+                        plotOutput("timeSeries")
                  ) #closes column
                ) #closes fluidRow
       ), #closes tab
       # ---- Second tab to be created ----
       tabPanel("Regional",
+               br(),
                fluidRow(# Show a plot of the generated distribution
-                 column(12,
+                 column(1,
+                      
+                 ),
+                 column(10,
                         plotOutput("activosActuales")
-                 ) #closes column
+                 ), #closes column
+                 column(1,
+                       
+                 )
                )#closes fluidRow
       ), #closes tab
       
       # ---- Third tab to be created ----
       tabPanel("Comunal",
+               br(),
                fluidRow(      
                  # Show a plot of the generated distribution
                  column(9,
-                        "text"
+                        plotOutput("misc2")
                  ), #closes column
                  column(3,
                         # Copy the chunk below to make a group of checkboxes
@@ -86,10 +95,11 @@ ui <- fluidPage(
       ), #closes tab
       # ---- Fourth tab to be created ----
       tabPanel("Otros", 
+               br(),
                fluidRow(
                  # Show a plot of the generated distribution
                  column(12,
-                        "text"
+                        plotOutput("misc")
                  )#closes column
                )#closes fluidRow
       )#closes tab

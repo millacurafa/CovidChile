@@ -36,6 +36,19 @@ server <- function(input, output) {
   # You can access the value of the widget with input$select, e.g.
   output$value <- renderPrint({ input$select })
   
+  output$timeSeries <- renderPlot({
+    # Dummy data
+    data <- data.frame(
+      day = as.Date("2017-06-14") - 0:364,
+      value = runif(365) + seq(-140, 224)^2 / 10000
+    )
+    
+    # Most basic bubble plot
+    p <- ggplot(data, aes(x=day, y=value)) +
+      geom_line() + 
+      xlab("")
+    p
+  })
   
   output$activosActuales <- renderPlot({
     CasosActivosData %>% 
@@ -76,6 +89,18 @@ server <- function(input, output) {
       ) +
       theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank()) # +
     #   scale_color_gradientn(colours = rainbow(5)) 
+  })
+  
+  output$misc <- renderPlot({
+    qplot(mpg, wt, data = mtcars, colour = cyl)
+    # p2 <- qplot(mpg, data = mtcars) + ggtitle("title")
+    # p3 <- qplot(mpg, data = mtcars, geom = "dotplot")
+    # p4 <- p1 + facet_wrap( ~ carb, nrow = 1) + theme(legend.position = "none") +
+    #   ggtitle("facetted plot")
+  })
+  
+  output$misc2 <- renderPlot({
+    qplot(mpg, data = mtcars, geom = "dotplot") + facet_wrap( ~ carb, nrow = 1) + theme(legend.position = "none") + ggtitle("facetted plot")
   })
   
 }
