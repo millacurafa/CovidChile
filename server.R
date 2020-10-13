@@ -7,7 +7,7 @@ library(lubridate)
 poblacion <- read_csv("poblacion.csv") %>%  
   clean_names()
 
-mydata <- read_csv("https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto25/CasosActualesPorComuna_std.csv") %>% 
+CasosActivosData <- read_csv("https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto25/CasosActualesPorComuna_std.csv") %>% 
   clean_names() %>% 
   mutate(region= ifelse(region=="Aysen","Aysén",region)) %>% 
   mutate(region= ifelse(region=="Tarapaca", "Tarapacá",region)) %>% 
@@ -33,9 +33,12 @@ server <- function(input, output) {
   # with input$checkGroup, e.g.
   output$value <- renderPrint({ input$checkGroup })
   
+  # You can access the value of the widget with input$select, e.g.
+  output$value <- renderPrint({ input$select })
+  
   
   output$activosActuales <- renderPlot({
-    mydata %>% 
+    CasosActivosData %>% 
       filter(fecha == ymd(input$date)) %>% 
       group_by(region) %>% 
       summarise(total = sum(casos_actuales, na.rm = TRUE)) %>% 
