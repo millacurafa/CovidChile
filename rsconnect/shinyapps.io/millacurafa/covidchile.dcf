@@ -5,6 +5,9 @@ account: millacurafa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2997599
-bundleId: 3731670
+bundleId: 3732535
 url: https://millacurafa.shinyapps.io/covidchile/
-when: 1602535238.89958
+when: 1602554789.63121
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md

@@ -86,6 +86,27 @@ ui <- fluidPage(
                         plotOutput("misc2")
                  ), #closes column
                  column(3,
+                        
+                        # Copy the line below to make a select box 
+                        selectInput("selectRegion", label = h3("Elegir Región"), 
+                                    choices = list("Arica y Parinacota" = 1,
+                                                   "Tarapacá" = 2, 
+                                                   "Antofagasta" = 3,
+                                                   "Atacama" = 4,
+                                                   "Coquimbo" = 5,
+                                                   "Valparaíso" = 6,
+                                                   "Metropolitana" = 7,
+                                                   "O’Higgins" = 8,
+                                                   "Maule" = 9,
+                                                   "Ñuble" = 10,
+                                                   "Biobío" = 11,
+                                                   "Araucanía" = 12,
+                                                   "Los Ríos" = 13,
+                                                   "Los Lagos" = 14,
+                                                   "Aysén" = 15,
+                                                   "Magallanes" = 16
+                                                   ), 
+                                    selected = 1),
                         # Copy the chunk below to make a group of checkboxes
                         checkboxGroupInput("checkGroup", label = h3("Comunas a analizar"), 
                                            choices = list("Comuna 1" = 1, "Comuna 2" = 2, "Comuna 3" = 3),

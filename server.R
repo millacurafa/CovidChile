@@ -33,6 +33,9 @@ server <- function(input, output) {
   # with input$checkGroup, e.g.
   output$value <- renderPrint({ input$checkGroup })
   
+  # You can access the value of the widget with input$selectRegion, e.g.
+  output$value <- renderPrint({ input$selectRegion })
+  
   # You can access the value of the widget with input$select, e.g.
   output$value <- renderPrint({ input$select })
   
