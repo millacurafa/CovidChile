@@ -1,7 +1,7 @@
 # CovidChile
 Dashboard for analysis of Chilean Covid19 data
 
-A live version is being constantly updated at [shinyapps.io](https://millacurafa.shinyapps.io/covidchile/)
+A live version is being constantly updated at [shinyapps.io](https://millacurafa.shinyapps.io/covidchile/) (Work in progress)
 
 ## Getting Started
 
